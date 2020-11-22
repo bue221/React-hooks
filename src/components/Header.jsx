@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 //material ui
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+//context
+import ThemeContext from "../context/ThemeContext";
 
 const useStyles = makeStyles({
   black: {
@@ -21,6 +23,8 @@ const useStyles = makeStyles({
 
 const Header = ({ onClick, darkMode }) => {
   const classes = useStyles();
+
+  const color = useContext(ThemeContext);
 
   return (
     <div className={classes.Header}>
